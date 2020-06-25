@@ -65,12 +65,11 @@ class Student
       SELECT *
       FROM students
       WHERE grade = 10  
-      LIMIT 1 
     SQL
     s = DB[:conn].execute(sql)
     s.collect do |row|
     self.new_from_db(row)
-   end 
+   end.first  
   end 
 
   def self.find_by_name(name)
