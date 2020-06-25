@@ -67,7 +67,7 @@ class Student
       WHERE grade = 10  
       LIMIT 1 
     SQL
-    s = DB[:conn].execute(sql,x)
+    s = DB[:conn].execute(sql)
     s.collect do |row|
     self.new_from_db(row)
    end 
