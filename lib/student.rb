@@ -51,11 +51,10 @@ class Student
      sql = <<-SQL
       SELECT *
       FROM students
-      WHERE students.grade = 10  
+      WHERE grade = 10  
       LIMIT ? 
     SQL
-    s = DB[:conn].execute(sql)
-    s.collect do |row|
+    s = DB[:conn].execute(sql,X)
   end 
 
   def self.find_by_name(name)
