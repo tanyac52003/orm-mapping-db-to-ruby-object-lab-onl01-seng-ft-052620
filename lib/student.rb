@@ -29,7 +29,7 @@ class Student
       FROM students
       WHERE students.grade = 9 
     SQL
-  end 
+  end.first  
 
   def self.find_by_name(name)
     sql = <<-SQL
