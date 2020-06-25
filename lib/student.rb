@@ -29,6 +29,8 @@ class Student
       FROM students
       WHERE students.grade = 9 
     SQL
+    s = DB[:conn].execute(sql).collect do |row|
+    self.new_from_db(row)
   end 
 
   def self.find_by_name(name)
