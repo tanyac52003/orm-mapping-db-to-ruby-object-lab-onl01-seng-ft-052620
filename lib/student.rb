@@ -47,12 +47,12 @@ class Student
    end 
   end 
   
-  def self.first_X_students_in_grade_10(2)
+  def self.first_X_students_in_grade_10(INTEGER)
      sql = <<-SQL
       SELECT *
       FROM students
       WHERE students.grade = 10  
-      LIMIT 2 
+      LIMIT INTEGER 
     SQL
     s = DB[:conn].execute(sql)
     s.collect do |row|
